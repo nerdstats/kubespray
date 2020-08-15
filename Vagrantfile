@@ -52,7 +52,7 @@ $shared_folders ||= {}
 $forwarded_ports ||= {}
 $subnet ||= "172.18.8"
 $os ||= "ubuntu1804"
-$network_plugin ||= "flannel"
+$network_plugin ||= "calico"
 # Setting multi_networking to true will install Multus: https://github.com/intel/multus-cni
 $multi_networking ||= false
 $download_run_once ||= "True"
@@ -198,7 +198,7 @@ Vagrant.configure("2") do |config|
 
       host_vars[vm_name] = {
         "ip": ip,
-        "flannel_interface": "eth1",
+        "calico_interface": "eth1",
         "kube_network_plugin": $network_plugin,
         "kube_network_plugin_multus": $multi_networking,
         "download_run_once": $download_run_once,
