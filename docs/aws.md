@@ -10,6 +10,12 @@ Make sure your VPC has both DNS Hostnames support and Private DNS enabled.
 
 The next step is to make sure the hostnames in your `inventory` file are identical to your internal hostnames in AWS. This may look something like `ip-111-222-333-444.us-west-2.compute.internal`. You can then specify how Ansible connects to these instances with `ansible_ssh_host` and `ansible_ssh_user`.
 
+Install Ansible ```sudo apt-add-repository ppa:ansible/ansible
+                 sudo apt-get update
+                 sudo apt-get install ansible -y```
+
+Install pip ```sudo apt install python-pip```
+
 You can now create your cluster!
 
 ## Dynamic Inventory
